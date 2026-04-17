@@ -17,3 +17,32 @@ spec:
           image: redis
           ports:
             - containerPort: 6379
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "100m"
+              memory: "128Mi"
+
+
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: redis-deployment
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       component: redis
+#   template:
+#     metadata:
+#       labels:
+#         component: redis
+#     spec:
+#       containers:
+#         - name: redis
+#           image: redis
+#           ports:
+#             - containerPort: 6379
